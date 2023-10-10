@@ -14,12 +14,18 @@ export class GithubController {
       const repoUrl = `https://api.github.com/repos/${owner}/${repoName}`;
       const commitsUrl = `https://api.github.com/repos/${owner}/${repoName}/commits`;
 
+      const headers = {
+        Authorization: `token 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`, // Asegúrate de que el token esté precedido por la palabra "token"
+      };
+
       // Obtener información del repositorio
-      const repoResponse = await this.httpService.get(repoUrl).toPromise();
+      const repoResponse = await this.httpService
+        .get(repoUrl, { headers })
+        .toPromise();
 
       // Obtener commits del repositorio
       const commitsResponse = await this.httpService
-        .get(commitsUrl)
+        .get(commitsUrl, { headers })
         .toPromise();
 
       return {
@@ -27,7 +33,7 @@ export class GithubController {
         commits: commitsResponse.data,
       };
     } catch (error) {
-      // Aquí puedes manejar el error, por ejemplo, devolver un mensaje de error personalizado
+      console.log(error);
       throw new NotFoundException(
         `Repositorio ${owner}/${repoName} no encontrado.`,
       );
