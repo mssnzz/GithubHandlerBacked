@@ -7,13 +7,13 @@ async function bootstrap() {
 
   // Habilitar CORS
   app.enableCors({
-    origin: 'https://githubsystem.vercel.app/, localhost:3000',
+    origin: ['https://githubsystem.vercel.app', 'http://localhost:3000'], // Array de orígenes permitidos
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
   });
 
   const configService = app.get(ConfigService);
-  const port = configService.get<number>('PORT') || 3000; // Si no se encuentra el PORT en .env, se usará 3000 por defecto
+  const port = configService.get<number>('PORT') || 3000;
 
   await app.listen(port);
 }
