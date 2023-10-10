@@ -15,7 +15,7 @@ export class GithubController {
       const commitsUrl = `https://api.github.com/repos/${owner}/${repoName}/commits`;
 
       const headers = {
-        Authorization: `token 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`, // Asegúrate de que el token esté precedido por la palabra "token"
+        Authorization: `token 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`, // Asegúrate de que el token esté precedido por la palabra "token"
       };
 
       // Obtener información del repositorio
