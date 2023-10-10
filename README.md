@@ -28,7 +28,18 @@ Welcome to the GitHub Repository System project! This guide will walk you throug
    ```bash
    npm install
    ```
+### GitHub Token Setup
 
+To make the GitHub controller function correctly, you'll need to provide your `GITHUB_TOKEN`.
+
+1. Locate the `.env` file in the root directory of the project.
+2. Add your GitHub token next to the `GITHUB_TOKEN` variable.
+
+```
+GITHUB_TOKEN=your_github_token_here
+```
+
+Make sure not to commit your `.env` file with your token for security reasons.
 ## Running the Project
 
 To run the project, you can use the NestJS CLI:
