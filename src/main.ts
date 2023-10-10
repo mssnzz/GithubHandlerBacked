@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Habilitar CORS
   app.enableCors({
-    origin: '*', // Permite a cualquier origen. En producción, deberías especificar los dominios permitidos.
+    origin: 'https://githubsystem.vercel.app/, localhost:3000', // Permite a cualquier origen. En producción, deberías especificar los dominios permitidos.
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
   });
