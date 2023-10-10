@@ -39,7 +39,6 @@ To make the GitHub controller function correctly, you'll need to provide your `G
 GITHUB_TOKEN=your_github_token_here
 ```
 
-Make sure not to commit your `.env` file with your token for security reasons.
 ## Running the Project
 
 To run the project, you can use the NestJS CLI:
